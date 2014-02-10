@@ -1,0 +1,17 @@
+A simple IRC bot for Omega based on cinch:
+
+    https://github.com/cinchrb/cinch
+
+To use simply:
+
+    gem install rjr
+    gem install cinch
+    ruby -I. oib.rb
+
+To run as a daemon run
+
+    sh oib-start.sh
+
+To stop daemon run:
+
+    sh oib-stop.sh

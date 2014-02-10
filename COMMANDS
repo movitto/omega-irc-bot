@@ -1,0 +1,49 @@
+Omega IRC Bot Command & Subcommand Reference:
+
+All commands should be sent via an IRC message to the bot in the
+following format:
+
+!<cmd> <subcmd> <cmd-opts>
+
+Not all commands accept subcommands.
+
+The following is currently accepted by the Omega IRC Bot
+
+- command: git
+  - description: mechanisms to query / return urls to the omega git repo
+  - subcommand: file
+    - description: return url to the file in git relative to the
+                   omega project root
+  - subcommand: dir
+    - description: return url to the dir in git relative to the
+                   omega project root
+  - subcommand: commit
+    - description: return url to the specified git commit
+
+- command: omega
+  - description: general omega JSON-RPC request, specify request parameters
+                 on by one on the command line, seperated by whitespace,
+                 _without_ quotes
+  - example: !omega stats::get universe_id
+  - example: !omega cosmos::get_entity with_id Athena
+
+- command: entity
+  - description: lookup and return specified entity
+  - subcommand: galaxy
+    - description: return the id of the galaxy with the specified name
+    - example: !entity galaxy 'Zeus'
+  - subcommand: system
+    - description: return the id of the system with the specified name
+    - example: !entity galaxy 'Athena'
+  - subcommand: ship
+    - description: return the string representation of the ship with the
+                   specified id
+  - subcommand: station
+    - description: return the string representation of the station with the
+                   specified id
+  - subcommand: stat
+    - description: return the value of the specified stat
+      - example: !entity stat universe_id
+
+
+More coming soon!
